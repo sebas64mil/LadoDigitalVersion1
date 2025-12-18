@@ -18741,7 +18741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce8ea044713aac4bbff37a8f0f20fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GeneralPlayerSettingsManager
-  defaultCameraSensitivity: 100
+  defaultCameraSensitivity: 101
   minCameraSensitivity: 10
   maxCameraSensitivity: 200
 --- !u!114 &1467440638
