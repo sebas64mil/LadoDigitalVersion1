@@ -4,6 +4,7 @@ public class LevelManager : MonoBehaviour
 {
     public GameObject PauseMenu;
     public GameObject OptionMenu;
+    public GameObject ControlesMenu;
     private bool isPaused = false;
 
     private void OnEnable()
@@ -37,6 +38,8 @@ public class LevelManager : MonoBehaviour
         if (!isPaused) { 
         
         OptionMenu.SetActive(false);
+        ControlesMenu.SetActive(false);
+        GameManager.CursorVisible(false);
         }
     }
 

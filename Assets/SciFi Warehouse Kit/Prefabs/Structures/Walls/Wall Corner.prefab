@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 111684994951680353}
   - component: {fileID: 4707827833281231700}
   - component: {fileID: 6252346757869592013}
+  - component: {fileID: 5709785015055366225}
   m_Layer: 0
   m_Name: Wall Corner
   m_TagString: Untagged
@@ -133,3 +134,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.33, y: 9.944736, z: 6.15001}
   m_Center: {x: 0, y: 4.034495, z: 2.9249983}
+--- !u!205 &5709785015055366225
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851013419894056381}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 2.9249942, y: 3.9999876, z: 2.924998}
+  m_Size: 9.999979
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.29500273
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 111684994951680353}
+  m_Enabled: 1

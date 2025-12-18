@@ -176,7 +176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.95, y: -1.99}
+  m_AnchoredPosition: {x: 2.9500122, y: -1.9900055}
   m_SizeDelta: {x: 0.46900046, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3175677780682015256
@@ -256,9 +256,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   opciones:
-  - Alternado
-  - Mantener
+  - m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   textoOpcion: {fileID: 8467106270090271946}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &2930817818739771626
 MonoBehaviour:
   m_ObjectHideFlags: 0

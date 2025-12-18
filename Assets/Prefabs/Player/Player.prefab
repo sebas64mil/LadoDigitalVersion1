@@ -2840,6 +2840,8 @@ MonoBehaviour:
   isRunning: 0
   hayObstaculoArriba: 0
   xRotation: 0
+  runToggleState: 0
+  crouchToggleState: 0
   animator: {fileID: 6038334393298291753}
   staminaView: {fileID: 821081196619747847}
   ignoreTag: IgnoreTrigger
@@ -2926,8 +2928,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.8, y: 0.11, z: 0.8}
-  m_Center: {x: 0, y: 0.64, z: 0}
+  m_Size: {x: 0.65148926, y: 0.110000014, z: 0.6948379}
+  m_Center: {x: 0.012512207, y: 0.64, z: -0.052581012}
 --- !u!95 &6038334393298291753
 Animator:
   serializedVersion: 7
@@ -3694,11 +3696,11 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
-  m_Dithering: 0
+  m_Dithering: 1
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_AllowHDROutput: 1

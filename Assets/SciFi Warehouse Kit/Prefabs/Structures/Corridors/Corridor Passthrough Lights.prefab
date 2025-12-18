@@ -142,6 +142,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2553481404179805090}
+  - component: {fileID: 8660745466276477843}
   m_Layer: 0
   m_Name: Corridor Passthrough Lights
   m_TagString: Untagged
@@ -170,6 +171,30 @@ Transform:
   - {fileID: 4828240809788918178}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &8660745466276477843
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553481404179836802}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 3.00001, y: 1.9000139, z: 2.999995}
+  m_Size: 6.300002
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.25220305
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2553481404177903944}
+    - renderer: {fileID: 2553481404177903950}
+    - renderer: {fileID: 2553481404177903948}
+    - renderer: {fileID: 2553481404177903938}
+    - renderer: {fileID: 1901528179550079166}
+    - renderer: {fileID: 5145407453068376007}
+  m_Enabled: 1
 --- !u!1 &2553481404179836808
 GameObject:
   m_ObjectHideFlags: 0

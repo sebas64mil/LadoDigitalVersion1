@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.Localization;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.Localization.Settings;
+
 
 public class KeyUIController : MonoBehaviour
 {
@@ -13,7 +17,8 @@ public class KeyUIController : MonoBehaviour
     [Header("Referencias")]
     public Image[] keyIcons;
     public PlayerProgressManager progressManager;
-    public string missionText = "Nueva misión asignada";
+    [Header("Misión Localizada al Activar el Portal")]
+    public LocalizedString missionMessageKey;
 
     [Header("Configuración")]
     public int doorID;
@@ -52,7 +57,14 @@ public class KeyUIController : MonoBehaviour
             // Verifica si TODAS las llaves de esta puerta están completas
             if (AllKeysFull())
             {
-                progressManager.SetCurrentMission(missionText);
+                long id = missionMessageKey.TableEntryReference.KeyId;
+
+                // Obtener la clave string real ("I018")
+                string realKey = PlayerProgressManager.Instance.GetKeyStringFromId("Tabla1", id);
+
+
+                // Enviar misión usando la key STRING real
+                PlayerProgressManager.Instance.SetCurrentMission(realKey);
             }
         }
     }

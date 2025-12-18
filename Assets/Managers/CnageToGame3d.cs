@@ -1,5 +1,9 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.Localization.Settings;
+
 public class ChangeToGame3D : MonoBehaviour
 {
     [Header("Referencia al Manager")]
@@ -18,9 +22,8 @@ public class ChangeToGame3D : MonoBehaviour
     public AudioClip openSound;
     private SFXAudioController audioCtrl;
 
-    [Tooltip("Mensaje que se mostrará como misión actual al usar el portal")]
-    [TextArea(2, 3)]
-    public string missionMessage;
+    [Header("Misión Localizada al Activar el Portal")]
+    public LocalizedString missionMessageKey;
 
     void Start()
     {
@@ -54,7 +57,16 @@ public class ChangeToGame3D : MonoBehaviour
             managerTransition.ChangeTo3D(targetPosition3D);
             audioCtrl.Play(openSound);
             isPlayerInside = false;
-            PlayerProgressManager.Instance.SetCurrentMission(missionMessage);
+
+
+            long id = missionMessageKey.TableEntryReference.KeyId;
+
+            // Obtener la clave string real ("I018")
+            string realKey = PlayerProgressManager.Instance.GetKeyStringFromId("Tabla1", id);
+
+
+            // Enviar misión usando la key STRING real
+            PlayerProgressManager.Instance.SetCurrentMission(realKey);
 
             // Una vez hecho el cambio, reseteamos el estado del portal
             if (portalAnimator != null)

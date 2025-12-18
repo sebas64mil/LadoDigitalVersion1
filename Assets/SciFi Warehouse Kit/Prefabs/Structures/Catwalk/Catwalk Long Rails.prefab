@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2503307386289838559}
   - component: {fileID: 2170165265610384419}
   - component: {fileID: 5294370429617578501}
+  - component: {fileID: 3294222415440351892}
   m_Layer: 7
   m_Name: Catwalk Long Rails
   m_TagString: Untagged
@@ -155,3 +156,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.23000002, y: 4.828757, z: 0.2800002}
   m_Center: {x: 2.01, y: 2.3943784, z: 3.0000253}
+--- !u!205 &3294222415440351892
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835881230559808018}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 1.0569875, y: 2.7306628, z: 3.0000253}
+  m_Size: 6.0000477
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.18977821
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 91912901979356878}
+  m_Enabled: 1

@@ -724,6 +724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3361326707275054558}
+  - component: {fileID: 6954995443818349681}
   m_Layer: 0
   m_Name: Corridor Incline Full
   m_TagString: Untagged
@@ -753,3 +754,28 @@ Transform:
   - {fileID: 3361326707275054544}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!205 &6954995443818349681
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3361326707275342334}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 3.0010598, y: 4.8999987, z: 6.0001287}
+  m_Size: 12.000313
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.28398967
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 3361326707273154366}
+    - renderer: {fileID: 3361326707273154364}
+    - renderer: {fileID: 3361326707273154362}
+    - renderer: {fileID: 3361326707273154360}
+    - renderer: {fileID: 3361326707273154358}
+    - renderer: {fileID: 3361326707273154356}
+    - renderer: {fileID: 3361326707273154354}
+  m_Enabled: 1

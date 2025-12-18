@@ -98,6 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1505956034637721244}
+  - component: {fileID: 6625796450363078653}
   m_Layer: 0
   m_Name: Ceiling Skylight
   m_TagString: Untagged
@@ -122,6 +123,26 @@ Transform:
   - {fileID: 3089457781081968691}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &6625796450363078653
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503265614260935823}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 3, y: 0.021719307, z: 2.9999993}
+  m_Size: 6.0000024
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.16
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8092062765133607492}
+    - renderer: {fileID: 6957952315348431251}
+  m_Enabled: 1
 --- !u!1 &3389875338750933123
 GameObject:
   m_ObjectHideFlags: 0

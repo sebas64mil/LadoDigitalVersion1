@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class PlayerProgressManager : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class PlayerProgressManager : MonoBehaviour
     public static event Action<int, int> OnKeyCollected; // (doorID, keyIndex)
     public static event Action OnGameSaved;
 
-    public static string CurrentMissionText = "Sal de la habitacion"; // <- misión accesible global
+    public static LocalizedString CurrentMission;
     public static event Action<string> OnMissionChanged; // <- evento
 
 
@@ -28,10 +30,10 @@ public class PlayerProgressManager : MonoBehaviour
     {
         currentData = SaveSystem.Load();
 
-        if (!string.IsNullOrEmpty(currentData.currentMission))
+        if (!string.IsNullOrEmpty(currentData.currentMissionKey))
         {
-            CurrentMissionText = currentData.currentMission;
-            OnMissionChanged?.Invoke(CurrentMissionText); // para actualizar la UI
+            CurrentMission = new LocalizedString("Tabla1", currentData.currentMissionKey);
+            OnMissionChanged?.Invoke(CurrentMission.GetLocalizedString());
         }
 
 
@@ -49,7 +51,26 @@ public class PlayerProgressManager : MonoBehaviour
         else
             managerTransition.posicion2d(currentData.playerPosition2D);
 
+
+        LocalizationSettings.SelectedLocaleChanged += OnLanguageChanged;
+
     }
+
+    private void OnLanguageChanged(UnityEngine.Localization.Locale locale)
+    {
+        RefreshMissionText();
+    }
+
+    private void RefreshMissionText()
+    {
+        if (CurrentMission == null) return;
+
+        CurrentMission.GetLocalizedStringAsync().Completed += op =>
+        {
+            OnMissionChanged?.Invoke(op.Result);
+        };
+    }
+
 
     public void ReachCheckpoint(Vector3 newPos3D, Vector3 newRot3D, Vector3 newPos2D, bool is3D)
     {
@@ -150,20 +171,52 @@ public class PlayerProgressManager : MonoBehaviour
     }
 
 
-    public void SetCurrentMission(string newMission)
+    public void SetCurrentMission(string missionKey)
     {
-        currentData.currentMission = newMission;
-        CurrentMissionText = newMission;
+        currentData.currentMissionKey = missionKey;
+
+        CurrentMission = new LocalizedString("Tabla1", missionKey);
 
         SaveSystem.Save(currentData);
         OnGameSaved?.Invoke();
 
-        OnMissionChanged?.Invoke(newMission);
+        // Extraer texto localizado pero sin romper async
+        CurrentMission.GetLocalizedStringAsync().Completed += op =>
+        {
+            OnMissionChanged?.Invoke(op.Result);
+        };
     }
 
-    public string GetCurrentMission()
+
+    public void GetCurrentMissionAsync(Action<string> callback)
     {
-        return CurrentMissionText;
+        CurrentMission.GetLocalizedStringAsync().Completed += op =>
+        {
+            callback(op.Result);
+        };
+    }
+
+    public string GetKeyStringFromId(string tableName, long keyId)
+    {
+        var table = UnityEngine.Localization.Settings.LocalizationSettings
+            .StringDatabase
+            .GetTable(tableName);
+
+        if (table == null)
+        {
+            Debug.LogError($"❌ Tabla no encontrada: {tableName}");
+            return null;
+        }
+
+        var entry = table.GetEntry(keyId);
+
+        if (entry == null)
+        {
+            Debug.LogError($"❌ No se encontró ninguna key con ID: {keyId}");
+            return null;
+        }
+
+        return entry.Key;  // <-- esto devuelve "I018"
     }
 
 

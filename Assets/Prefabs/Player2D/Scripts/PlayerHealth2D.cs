@@ -42,6 +42,8 @@ public class PlayerHealth2D : MonoBehaviour
         playerController.sfxController.StopWalk();
         playerController.sfxController.StopClimb();
 
+        DeadProgressPlayer.AddDeath();
+
         // Desactivar control de movimiento
         if (playerController != null)
             playerController.enabled = false;

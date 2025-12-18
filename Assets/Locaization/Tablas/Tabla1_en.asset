@@ -1,0 +1,311 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tabla1_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: c129a02367a2fc94688e158894551bb4, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 1425391998145397011
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Credits
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Camera sensitivity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: 3D Crouching
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: 2D Climbing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: 3D Running
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Lightning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: Full Screen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Neon Intensity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Ambient
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Sound effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Toggle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Hold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: Spanish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: Level 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Level 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Level 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: You discover all your power, but your true mission is to renounce
+      it and bring down the company that created it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Restart Progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: Thank you for trying the first version of the game!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: 'It would help me a lot if you could leave your opinion in the comments.
+      You can also play again to try and beat your score, which will update every
+      time you improve it. Your score was as follows:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Menu Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Bend
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: Jump
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: Climb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: "Technician L. Ramirez's Log \u2013 Day 3\r\nThe new security protocols
+      are over the top. I don't understand why we need to check the servers every
+      two hours. They say that \"certain digital entities\" have begun to exhibit
+      unpredictable behavior patterns."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: "Note from Guard H. Torres \u2013 Night Shift\r\nLast night I heard
+      voices in the hallway, like someone was talking from the turned-off monitors.
+      When I went closer, everything was silent. I'm not paid enough for this\u2026
+      but I can't quit either. Nobody can."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: "Dr. Vega's Report \u2013 Internal Record 12B\r\nThe subject assigned
+      to the cognitive module showed an unusual increase in emotional activity. I
+      don't know if it's a failure or progress, but the supervisors say that \"as
+      long as he feels something, it works.\" I wish I knew exactly what that means."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: "Personal Note from Engineer Solano \u2013 Server Area\nPlease check
+      the memory system again and look for repeated fragments.\nIt's as if someone
+      is rewriting their own memories without permission.\nIf this continues, the
+      tests are going to get out of control."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: "Guard L. Mendez's Log \u2013 Shift Change\r\nI was assigned to
+      patrol the Human Testing Level, but I haven't seen a single human. Just empty
+      rooms, cameras on, and doors opening by themselves. I swear, sometimes I feel
+      like someone's watching me from the panels."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: "Scientist E. Hoffman's Note \u2013 Day 14\r\nI was asked to ensure
+      that the \"main subject\" doesn't detect any inconsistencies.\r\nHow am I supposed
+      to do that if they don't even tell me what or who it is?\r\nThe only thing
+      that's clear is that we must keep it stable\u2026 whatever it is."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: "Corporate Analyst Log \u2013 High Priority\r\nManagement has ordered
+      all employees to avoid mentioning the word \u201Csimulation\u201D near active
+      modules.\r\nIt sounds ridiculous, but the last time someone did, the sensors
+      detected a massive anomaly. I still don't know what caused it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: "Internal Memo from Supervisor Braga \u2013 Control Area\r\nThe
+      cameras recorded activity in the hallways even though no personnel were assigned
+      there. They said it could be a system error\u2026 but the patterns were moving
+      as if they were real people. I don't like this at all. I feel like we're creating
+      something we don't understand."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: get the cards
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: Reach the other portal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: Find a way out
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Find a way to open the door
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Leave the room
+    m_Metadata:
+      m_Items:
+      - rid: 1425391998145397011
+  - m_Id: 56
+    m_Localized: You got the card {0}x
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: key
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77275571245056
+    m_Localized: "Don\u2019t let it see you"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89099452633088
+    m_Localized: Close Note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 311460663742464
+    m_Localized: You cannot enter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 312552319438848
+    m_Localized: Press E
+    m_Metadata:
+      m_Items: []
+  - m_Id: 318360654532608
+    m_Localized: Cards Collected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 333725346385920
+    m_Localized: Open the door
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1425391998145397011
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 55

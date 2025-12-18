@@ -21,6 +21,7 @@ public class DoorData
 public class DefaultSceneData
 {
     public string sceneName;          // Nombre de la escena
+    public bool levelCompleted;
     public bool is3D;                 // Estado actual (2D o 3D)
 
     public Vector3 playerPosition3D;  // Posición si está en 3D
@@ -29,18 +30,19 @@ public class DefaultSceneData
 
     public List<DoorData> doors;
 
-    public string currentMission;
+    public string currentMissionKey;
 
     public DefaultSceneData(string name)
     {
         sceneName = name;
+        levelCompleted = false;
         is3D = true;
         playerPosition3D = Vector3.zero;
         playerRotation3D = Vector3.zero;
         playerPosition2D = Vector3.zero;
         doors = new List<DoorData>();
 
-        currentMission = "Sal de la habitacion";
+        currentMissionKey = "I010";
     }
 
     public void AddDoor(int id, int numKeys)

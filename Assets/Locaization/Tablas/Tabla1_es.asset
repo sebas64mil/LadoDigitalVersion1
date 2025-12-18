@@ -1,0 +1,311 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tabla1_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: c129a02367a2fc94688e158894551bb4, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 1425391998145397012
+  m_TableData:
+  - m_Id: 1
+    m_Localized: Continuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3
+    m_Localized: Creditos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5
+    m_Localized: General
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6
+    m_Localized: Pantalla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7
+    m_Localized: Sonido
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9
+    m_Localized: Sensibilidad camara
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10
+    m_Localized: Agachado 3D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11
+    m_Localized: Escalado 2D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12
+    m_Localized: Correr 3D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13
+    m_Localized: Iluminacion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14
+    m_Localized: Pantalla Completa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15
+    m_Localized: Intensidad Neon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16
+    m_Localized: Ambiente
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17
+    m_Localized: Efectos de sonido
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18
+    m_Localized: Alternado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19
+    m_Localized: Mantener
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20
+    m_Localized: "Espa\xF1ol"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21
+    m_Localized: Ingles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22
+    m_Localized: Regresar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23
+    m_Localized: Progreso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24
+    m_Localized: Nivel 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25
+    m_Localized: Nivel 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26
+    m_Localized: Nivel 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27
+    m_Localized: "Descubres todo tu poder, pero tu verdadera misi\xF3n es renunciar
+      a este y derribar a la empresa que lo creo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28
+    m_Localized: Jugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29
+    m_Localized: Reiniciar Progreso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 30
+    m_Localized: "\xA1 Gracias por probar la primera version del juego !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 31
+    m_Localized: "Me ayudar\xEDa much\xEDsimo si puedes dejar tu opini\xF3n en los
+      comentarios. Tambi\xE9n puedes volver a jugar para intentar superar tu puntaje,
+      el cual se actualizara cada que lo mejores , el cual fue el siguiente:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32
+    m_Localized: Menu Principal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33
+    m_Localized: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36
+    m_Localized: Menu Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 37
+    m_Localized: Movimiento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 38
+    m_Localized: Agacharse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39
+    m_Localized: Correr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40
+    m_Localized: Saltar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41
+    m_Localized: Escalar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42
+    m_Localized: Pausar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43
+    m_Localized: "Bitacora del Tecnico L. Ramirez \u2013 D\xEDa 3\nLos nuevos protocolos
+      de seguridad son exagerados. No entiendo por que necesitamos revisar los servidores
+      cada dos horas. Dicen que \u201Cciertas entidades digitales\u201D han comenzado
+      a mostrar patrones de comportamiento impredecibles."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 44
+    m_Localized: "Nota del Guardia H. Torres \u2013 Turno Nocturno\nAnoche escuche
+      voces en el pasillo, como si alguien estuviera hablando desde los monitores
+      apagados. Cuando me acerque, todo estaba en silencio. No me pagan lo suficiente
+      para esto\u2026 pero tampoco puedo renunciar. Nadie puede."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 45
+    m_Localized: "Informe de la Dra. Vega \u2013 Registro Interno 12B\nEl sujeto
+      asignado al modulo cognitivo mostro un incremento inusual en la actividad emocional.No
+      se si es un fallo o un progreso, pero los supervisores dicen que \u201Cmientras
+      sienta algo, funciona\u201D. Ojala supiera que significa exactamente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 46
+    m_Localized: "Nota Personal del Ingeniero Solano \u2013 area de Servidores\nOtra
+      vez revise el sistema de memoria y detecte fragmentos repetidos.\nEs como si
+      alguien estuviera reescribiendo sus propios recuerdos sin permiso.\nSi esto
+      sigue asi, las pruebas se van a salir de control."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 47
+    m_Localized: "Bitacora del Guardia L. Mendez \u2013 Cambio de Turno\nMe asignaron
+      a patrullar el Nivel de Pruebas Humanas, pero no he visto a ningun humano.
+      Solo salas vacias, camaras encendidas y puertas que se abren solas.Juro que
+      a veces siento que alguien me observa desde los paneles."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48
+    m_Localized: "Nota de la Cientifica E. Hoffman \u2013 D\xEDa 14\nMe pidieron
+      asegurarme de que el \u201Csujeto principal\u201D no detecte inconsistencias.\n\xBFComo
+      se supone que voy a lograr eso si ni siquiera me dicen que o quien es?\nLo
+      unico claro es que debemos mantenerlo estable\u2026 sea lo que sea."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 49
+    m_Localized: "Registro del Analista Corporativo \u2013 Prioridad Alta\nLa directiva
+      ordeno que todos los empleados eviten mencionar la palabra \u201Csimulacion\u201D
+      cerca de los modulos activos.\nParece ridiculo, pero la ultima vez que alguien
+      lo hizo, los sensores detectaron una anomalia enorme. Aun no se que lo provoco."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 50
+    m_Localized: "Memo Interno del Supervisor Braga \u2013 Area de Control\nLas camaras
+      registraron actividad en los pasillos aunque no hab\xEDa personal asignado
+      alli. Dijeron que podia ser un error del sistema\u2026 pero los patrones se
+      movian como si fueran una persona real. No me gusta nada esto. Siento que estamos
+      creando algo que no entendemos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 51
+    m_Localized: consigue las tarjetas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 52
+    m_Localized: Logra Llegar al otro portal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 53
+    m_Localized: Busca la forma de salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54
+    m_Localized: Busca la forma de abrir la puerta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 55
+    m_Localized: Sal de la habitacion
+    m_Metadata:
+      m_Items:
+      - rid: 1425391998145397012
+  - m_Id: 56
+    m_Localized: Has conseguido la tarjeta {0}x
+    m_Metadata:
+      m_Items: []
+  - m_Id: 57
+    m_Localized: llave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77275571245056
+    m_Localized: Que no te vea
+    m_Metadata:
+      m_Items: []
+  - m_Id: 89099452633088
+    m_Localized: Cerrar Nota
+    m_Metadata:
+      m_Items: []
+  - m_Id: 311460663742464
+    m_Localized: No puedes entrar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 312552319438848
+    m_Localized: Presiona E
+    m_Metadata:
+      m_Items: []
+  - m_Id: 318360654532608
+    m_Localized: Tarjetas Recogidas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 333725346385920
+    m_Localized: Abre la puerta
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1425391998145397012
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 55

@@ -41,6 +41,36 @@ public static class SaveSystem
         }
     }
 
+    public static void Save(string sceneName, DefaultSceneData data)
+    {
+        string path = Path.Combine(Application.persistentDataPath, sceneName + "_playerData.json");
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(path, json);
+    }
+
+    public static DefaultSceneData Load(string sceneName)
+    {
+        string path = Path.Combine(Application.persistentDataPath, sceneName + "_playerData.json");
+
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            DefaultSceneData data = JsonUtility.FromJson<DefaultSceneData>(json);
+            return data;
+        }
+        else
+        {
+            // Usa los datos por defecto del contenedor
+            DefaultSceneDataContainer defaults = new DefaultSceneDataContainer();
+            DefaultSceneData defaultData = defaults.GetDefaultForScene(sceneName);
+
+            if (defaultData != null)
+                return defaultData;
+
+            return new DefaultSceneData(sceneName);
+        }
+    }
+
     public static void Delete()
     {
         string path = GetFilePath();

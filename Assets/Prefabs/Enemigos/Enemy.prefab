@@ -2287,7 +2287,7 @@ MonoBehaviour:
   - {fileID: 9000000, guid: 327f75a9adaa9d54c9cb3fc6260ae57e, type: 3}
   enemyConfigs:
   - Speed: 2
-    SpeedChase: 4
+    SpeedChase: 5
     TimerDurationChase: 4
     ScanSpeed: 3
     VisionAngle: 50
@@ -2314,7 +2314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyModel:
     speed: 2
-    speedChase: 4
+    speedChase: 5
     distanceToAttack: 3
     visionRange: 10
     visionAngle: 45

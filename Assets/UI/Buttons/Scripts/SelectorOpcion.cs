@@ -1,19 +1,38 @@
 ﻿using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Localization;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.Localization.Settings;
+
 
 public class SelectorOpcion : MonoBehaviour
 {
-    public string[] opciones;
+    public LocalizedString[] opciones;
     public TextMeshProUGUI textoOpcion;
 
-    public Action<int> OnValueChanged; // ✅ Evento que se disparará al cambiar
+    public Action<int> OnValueChanged;
 
     private int indiceActual = 0;
+    private AsyncOperationHandle<string> loadOp;
 
     void Start()
     {
         ActualizarTexto();
+
+        // 🔥 Escuchar si el idioma cambia
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+    }
+
+    private void OnDestroy()
+    {
+        // Muy importante para evitar memory leaks
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+    }
+
+    private void OnLocaleChanged(Locale obj)
+    {
+        ActualizarTexto(); // 🔥 Recargar la opción actual con el nuevo idioma
     }
 
     public void OpcionIzquierda()
@@ -37,13 +56,25 @@ public class SelectorOpcion : MonoBehaviour
     private void CambiarOpcion()
     {
         ActualizarTexto();
-        OnValueChanged?.Invoke(indiceActual); // ✅ Avisamos del cambio
+        OnValueChanged?.Invoke(indiceActual);
     }
 
     private void ActualizarTexto()
     {
-        if (opciones != null && opciones.Length > 0 && textoOpcion != null)
-            textoOpcion.text = opciones[indiceActual];
+        if (opciones == null || opciones.Length == 0 || textoOpcion == null)
+            return;
+
+        // Cancelar carga anterior si existe
+        if (loadOp.IsValid())
+            loadOp.Completed -= OnTextLoaded;
+
+        loadOp = opciones[indiceActual].GetLocalizedStringAsync();
+        loadOp.Completed += OnTextLoaded;
+    }
+
+    private void OnTextLoaded(AsyncOperationHandle<string> op)
+    {
+        textoOpcion.text = op.Result;
     }
 
     public int GetIndex() => indiceActual;

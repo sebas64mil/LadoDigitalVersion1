@@ -206,9 +206,39 @@ MonoBehaviour:
   managerTransition: {fileID: 0}
   targetPosition2D: {x: -36, y: 0.87, z: 0.08}
   messageText: {fileID: 1021406013091233820}
-  enterMessage: 'Presiona E '
-  exitMessage: No puedes Entrar
+  enterMessageKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:c129a02367a2fc94688e158894551bb4
+    m_TableEntryReference:
+      m_KeyId: 312552319438848
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  exitMessageKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:c129a02367a2fc94688e158894551bb4
+    m_TableEntryReference:
+      m_KeyId: 311460663742464
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   openSound: {fileID: 8300000, guid: be6f70ccff7a24e44b42a5ef777ebec5, type: 3}
+  missionMessageKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:c129a02367a2fc94688e158894551bb4
+    m_TableEntryReference:
+      m_KeyId: 52
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  virtualCamera2D: {fileID: 0}
+  confinerBounds2D: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &189809280489725478
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -97,8 +97,19 @@ MonoBehaviour:
   - {fileID: 6321233837428106280}
   - {fileID: 3665936901658829573}
   progressManager: {fileID: 0}
-  missionText: Abre la Puerta
+  missionMessageKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:c129a02367a2fc94688e158894551bb4
+    m_TableEntryReference:
+      m_KeyId: 333725346385920
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   doorID: 0
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1238523795711532800
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +228,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7847145556131569559
 Transform:
@@ -452,6 +463,7 @@ GameObject:
   - component: {fileID: 8126136837159153869}
   - component: {fileID: 6611457125076441147}
   - component: {fileID: 3873260358010669995}
+  - component: {fileID: 1506455773222620433}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -577,3 +589,43 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1506455773222620433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8066062690229646956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:c129a02367a2fc94688e158894551bb4
+    m_TableEntryReference:
+      m_KeyId: 318360654532608
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3873260358010669995}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  references:
+    version: 2
+    RefIds: []

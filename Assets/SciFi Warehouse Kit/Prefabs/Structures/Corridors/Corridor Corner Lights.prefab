@@ -299,6 +299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7220986072346051319}
+  - component: {fileID: 5526691312185071519}
   m_Layer: 0
   m_Name: Corridor Corner Lights
   m_TagString: Untagged
@@ -327,6 +328,30 @@ Transform:
   - {fileID: 7220986072346051323}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &5526691312185071519
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220986072346222295}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.07501078, y: 1.9000118, z: -0.07380557}
+  m_Size: 12.1500025
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.22471605
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7220986072344281111}
+    - renderer: {fileID: 7220986072344281109}
+    - renderer: {fileID: 7220986072344281107}
+    - renderer: {fileID: 7220986072344281105}
+    - renderer: {fileID: 7220986072344281119}
+    - renderer: {fileID: 7220986072344281117}
+  m_Enabled: 1
 --- !u!1 &7220986072346222299
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +365,7 @@ GameObject:
   - component: {fileID: 7220986072344281117}
   - component: {fileID: 1747401392397527095}
   - component: {fileID: 4462101725538808231}
+  - component: {fileID: 6362298467178952052}
   m_Layer: 0
   m_Name: Tunnel Walls001
   m_TagString: Untagged
@@ -460,6 +486,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.290164, y: 5.799971, z: 12.147602}
   m_Center: {x: 6.00493, y: 1.9000118, z: -0.07380581}
+--- !u!65 &6362298467178952052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220986072346222299}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.093277, y: 5.799971, z: 6.051677}
+  m_Center: {x: -2.913437, y: 1.9000118, z: 2.9033535}
 --- !u!1 &7220986072346222301
 GameObject:
   m_ObjectHideFlags: 0

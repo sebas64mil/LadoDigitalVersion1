@@ -83,10 +83,39 @@ public class GameManager : MonoBehaviour
 
     public static void QuitGame()
     {
-        SaveSystem.DeleteAllSaves();
-        ResetMissionProgress();
         Application.Quit();
     }
+    public static void resetGameProgress()
+    {
+        // 1. Borrar saves
+        SaveSystem.DeleteAllSaves();
+
+        // 2. Resetear misiones
+        ResetMissionProgress();
+
+        // 3. Resetear tiempo
+        PlayerPrefs.SetFloat("Level1_CurrentTime", 0f);
+        PlayerPrefs.SetFloat("Level1_BestTime", float.MaxValue);
+
+        // ⭐ 4. Resetear bandera global
+        PlayerPrefs.SetInt("Level1Completed", 0);
+
+        // 5. Resetear levelCompleted en archivo principal
+        DefaultSceneData data = SaveSystem.Load("Level1");
+        data.levelCompleted = false;
+        SaveSystem.Save("Level1", data);
+
+        // 6. Resetear muertes
+        DeadProgressPlayer.ResetDeaths();
+        if (DeadProgressUI.Instance != null)
+            DeadProgressUI.Instance.UpdateUI();
+
+        PlayerPrefs.Save();
+
+
+    }
+
+
 
     public static void ResetMissionProgress()
     {

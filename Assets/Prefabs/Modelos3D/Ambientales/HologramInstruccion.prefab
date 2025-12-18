@@ -326,7 +326,7 @@ MonoBehaviour:
   uiImage2: {fileID: 3032434299241998036}
   uiText: {fileID: 891797810754632396}
   playerTag: Player
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  normalColor: {r: 0, g: 0, b: 0, a: 1}
   highlightColor: {r: 0, g: 0.56213, b: 1, a: 1}
   colorSpeed: 3
   uiFadeSpeed: 2

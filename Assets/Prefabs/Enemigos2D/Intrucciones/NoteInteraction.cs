@@ -1,21 +1,25 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class NoteInteractionToggle : MonoBehaviour
 {
     [Header("UI References")]
-    public GameObject interactIcon; // World Space icon "Press E"
-    public GameObject notePanel;    // Overlay Note Panel
+    public GameObject interactIcon;
+    public GameObject notePanel;
     public TMP_Text noteText;
 
-    [Header("Note Content")]
-    [TextArea(4, 10)]
-    public string noteContent;
+    [Header("Note Content (Localization Key)")]
+    public LocalizedString noteKey;   //  antes era string, ahora es LocalizedString
+
+    private AsyncOperationHandle<string> loadOp;
 
     private bool playerInRange = false;
     private bool noteOpen = false;
 
-    [Header("Sonidos Config")]
+    [Header("Sonidos")]
     public AudioClip openSound;
     private SFXAudioController audioCtrl;
 
@@ -26,6 +30,23 @@ public class NoteInteractionToggle : MonoBehaviour
 
         if (audioCtrl == null)
             audioCtrl = gameObject.AddComponent<SFXAudioController>();
+
+        //  Cargar texto inicial
+        LoadLocalizedText();
+
+        //  Escuchar cambios de idioma
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+    }
+
+    private void OnDestroy()
+    {
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+    }
+
+    private void OnLocaleChanged(Locale obj)
+    {
+        if (noteOpen)   // si la nota está abierta, se actualiza en vivo
+            LoadLocalizedText();
     }
 
     void Update()
@@ -41,8 +62,8 @@ public class NoteInteractionToggle : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
-      {
-            CloseNote();    
+        {
+            CloseNote();
         }
     }
 
@@ -69,11 +90,11 @@ public class NoteInteractionToggle : MonoBehaviour
     {
         noteOpen = true;
         notePanel.SetActive(true);
-        noteText.text = noteContent;
+
+        LoadLocalizedText(); //  cargar texto localizado
 
         interactIcon.SetActive(false);
         audioCtrl.Play(openSound);
-
     }
 
     void CloseNote()
@@ -84,6 +105,20 @@ public class NoteInteractionToggle : MonoBehaviour
 
         if (playerInRange)
             interactIcon.SetActive(true);
+    }
 
+    //  Carga segura del texto localizado
+    private void LoadLocalizedText()
+    {
+        if (loadOp.IsValid())
+            loadOp.Completed -= OnTextLoaded;
+
+        loadOp = noteKey.GetLocalizedStringAsync();
+        loadOp.Completed += OnTextLoaded;
+    }
+
+    private void OnTextLoaded(AsyncOperationHandle<string> op)
+    {
+        noteText.text = op.Result;
     }
 }

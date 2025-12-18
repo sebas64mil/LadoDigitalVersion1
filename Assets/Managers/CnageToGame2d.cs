@@ -1,6 +1,10 @@
-﻿using TMPro; //  Necesario para usar TextMeshPro
+﻿using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.Localization.Settings;
+
 
 public class CnageToGame2d : MonoBehaviour
 {
@@ -13,11 +17,11 @@ public class CnageToGame2d : MonoBehaviour
     [Header("Referencia al Texto")]
     public TextMeshProUGUI messageText;
 
-    [Tooltip("Mensaje que aparece al entrar al trigger")]
-    public string enterMessage = "Presiona E para cambiar a 2D";
+    [Header("Mensajes Localizados")]
+    public LocalizedString enterMessageKey;  //  REEMPLAZA enterMessage
+    public LocalizedString exitMessageKey;   //  REEMPLAZA exitMessage
 
-    [Tooltip("Mensaje que aparece al salir del trigger")]
-    public string exitMessage = "";
+    private AsyncOperationHandle<string> loadOp;
 
     private bool isPlayerInside = false;
 
@@ -25,24 +29,20 @@ public class CnageToGame2d : MonoBehaviour
     public AudioClip openSound;
     private SFXAudioController audioCtrl;
 
-
-    [Tooltip("Mensaje que se mostrará como misión actual al usar el portal")]
-    [TextArea(2, 3)]
-    public string missionMessage;
+    [Header("Misión Localizada al Activar el Portal")]
+    public LocalizedString missionMessageKey;
 
 
     [Header("Referencia de Cámara y Confiner (opcional)")]
-    [Tooltip("Referencia a la cámara virtual usada en modo 2D")]
     public CinemachineCamera virtualCamera2D;
-
-    [Tooltip("Collider2D que define los límites de la zona 2D")]
     public Collider2D confinerBounds2D;
-
-
 
     void Start()
     {
         audioCtrl = GetComponent<SFXAudioController>();
+
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,7 +50,7 @@ public class CnageToGame2d : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInside = true;
-            messageText.text = enterMessage;
+            CargarMensaje(enterMessageKey);   // 🔥 Mensaje localizado
         }
     }
 
@@ -59,7 +59,7 @@ public class CnageToGame2d : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInside = false;
-            messageText.text = exitMessage;
+            CargarMensaje(exitMessageKey);    // 🔥 Mensaje localizado
         }
     }
 
@@ -70,10 +70,52 @@ public class CnageToGame2d : MonoBehaviour
             managerTransition.ChangeTo2D(targetPosition2D);
             TryAssignConfiner2D();
             audioCtrl.Play(openSound);
+
             isPlayerInside = false;
-            messageText.text = exitMessage;
-            PlayerProgressManager.Instance.SetCurrentMission(missionMessage);
+            CargarMensaje(exitMessageKey);
+
+
+            long id = missionMessageKey.TableEntryReference.KeyId;
+
+            // Obtener la clave string real ("I018")
+            string realKey = PlayerProgressManager.Instance.GetKeyStringFromId("Tabla1", id);
+
+
+            // Enviar misión usando la key STRING real
+            PlayerProgressManager.Instance.SetCurrentMission(realKey);
         }
+    }
+
+    private void OnLocaleChanged(UnityEngine.Localization.Locale newLocale)
+    {
+        if (isPlayerInside)
+            CargarMensaje(enterMessageKey);
+        else
+            CargarMensaje(exitMessageKey);
+    }
+
+    private void OnDestroy()
+    {
+        LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+    }
+
+
+    private void CargarMensaje(LocalizedString key)
+    {
+        if (messageText == null || key == null)
+            return;
+
+        // Cancelar carga previa
+        if (loadOp.IsValid())
+            loadOp.Completed -= OnMessageLoaded;
+
+        loadOp = key.GetLocalizedStringAsync();
+        loadOp.Completed += OnMessageLoaded;
+    }
+
+    private void OnMessageLoaded(AsyncOperationHandle<string> op)
+    {
+        messageText.text = op.Result;
     }
 
     private void TryAssignConfiner2D()
@@ -96,6 +138,5 @@ public class CnageToGame2d : MonoBehaviour
             confiner.BoundingShape2D = confinerBounds2D;
             confiner.InvalidateBoundingShapeCache();
         }
-
     }
 }

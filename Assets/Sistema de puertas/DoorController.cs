@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Localization;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.Localization.Settings;
+
 
 public class DoorController : MonoBehaviour
 {
@@ -31,7 +35,8 @@ public class DoorController : MonoBehaviour
     public AudioClip wrongSound;
     private SFXAudioController audioCtrl;
 
-    public string missionText = "Nueva misión asignada";
+    [Header("Misión Localizada al Activar el Portal")]
+    public LocalizedString missionMessageKey;
 
     private bool isPlayerInside = false;
     private bool hasOpened = false; //  evita que se repita
@@ -116,11 +121,31 @@ public class DoorController : MonoBehaviour
 
         if (goToMenu)
         {
+
+            if (LevelTimer.Instance != null)
+            {
+                LevelTimer.Instance.SaveBestTime();
+                LevelTimer.Instance.ResetTime();
+            }
+
+
+            // ⭐ Guardar bandera global de que el nivel ya se completó una vez
+            PlayerPrefs.SetInt("Level1Completed", 1);
+            PlayerPrefs.Save();
+
+            // ⭐ Guardar el levelCompleted en el propio archivo del nivel
+            DefaultSceneData data = SaveSystem.Load("Level1");
+            data.levelCompleted = true;
+            SaveSystem.Save("Level1", data);
+
+            // Borrar saves EXCEPTO el flag global
             GameManager.CursorVisible(true);
-            SaveSystem.Delete();
+            SaveSystem.DeleteAllSaves();
             GameManager.ResetMissionProgress();
             GameManager.LoadScene(targetSceneName);
         }
+
+
         else
         {
             var player3D = progressManager.managerTransition.player3D;
@@ -129,7 +154,16 @@ public class DoorController : MonoBehaviour
             {
                 player3D.transform.position = teleportTarget.position;
                 progressManager.SavePosition3D(teleportTarget.position);
-                progressManager.SetCurrentMission(missionText);
+
+
+                long id = missionMessageKey.TableEntryReference.KeyId;
+
+                // Obtener la clave string real ("I018")
+                string realKey = PlayerProgressManager.Instance.GetKeyStringFromId("Tabla1", id);
+
+
+                // Enviar misión usando la key STRING real
+                PlayerProgressManager.Instance.SetCurrentMission(realKey);
             }
         }
     }

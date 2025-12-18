@@ -98,6 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3354483237132263378}
+  - component: {fileID: 3354787360254795521}
   m_Layer: 0
   m_Name: Corridor Tee Lights
   m_TagString: Untagged
@@ -126,6 +127,30 @@ Transform:
   - {fileID: 3354483237132263390}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &3354787360254795521
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3354483237132092402}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 3.0000057, y: 1.9000163, z: -0.07500243}
+  m_Size: 18.000011
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.44004527
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 3354483237134032178}
+    - renderer: {fileID: 3354483237134032176}
+    - renderer: {fileID: 3354483237134032182}
+    - renderer: {fileID: 3354483237134032180}
+    - renderer: {fileID: 3354483237134032186}
+    - renderer: {fileID: 3354483237134032184}
+  m_Enabled: 1
 --- !u!1 &3354483237132092404
 GameObject:
   m_ObjectHideFlags: 0

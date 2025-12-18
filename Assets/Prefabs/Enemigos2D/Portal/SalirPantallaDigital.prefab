@@ -133,6 +133,18 @@ MonoBehaviour:
   targetPosition3D: {x: -437.26, y: 1.51, z: -42.01}
   portalAnimator: {fileID: 651060673119243680}
   openSound: {fileID: 8300000, guid: be6f70ccff7a24e44b42a5ef777ebec5, type: 3}
+  missionMessageKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:c129a02367a2fc94688e158894551bb4
+    m_TableEntryReference:
+      m_KeyId: 53
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!61 &4376771314565704205
 BoxCollider2D:
   m_ObjectHideFlags: 0

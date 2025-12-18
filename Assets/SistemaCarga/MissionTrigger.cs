@@ -1,30 +1,35 @@
 ﻿using UnityEngine;
+using UnityEngine.Localization;
 
 public class MissionTrigger : MonoBehaviour
 {
-    [SerializeField] private string missionText;
+    [Header("Misión localizada que se activará al entrar")]
+    public LocalizedString missionKey;
+
     private bool hasTriggered = false;
 
-    private string missionKey;
+    private string savedKey; // clave real usada para PlayerPrefs
 
     private void Start()
     {
-        missionKey = "Mission_" + missionText;
+        // Obtener el ID de la entry
+        long id = missionKey.TableEntryReference.KeyId;
 
-        // Si ya estaba completada antes, no activamos el trigger
-        if (PlayerPrefs.GetInt(missionKey, 0) == 1)
+        // Convertirlo a la key real ("I018")
+        savedKey = PlayerProgressManager.Instance.GetKeyStringFromId("Tabla1", id);
+
+        // Si ya estaba activado antes → desactivar el trigger
+        if (PlayerPrefs.GetInt(savedKey, 0) == 1)
         {
             gameObject.SetActive(false);
         }
     }
 
-    // Trigger 3D
     private void OnTriggerEnter(Collider other)
     {
         TryTrigger(other.CompareTag("Player"));
     }
 
-    // Trigger 2D
     private void OnTriggerEnter2D(Collider2D other)
     {
         TryTrigger(other.CompareTag("Player"));
@@ -34,14 +39,16 @@ public class MissionTrigger : MonoBehaviour
     {
         if (!isPlayer || hasTriggered) return;
 
-        PlayerProgressManager.Instance.SetCurrentMission(missionText);
         hasTriggered = true;
 
-        // Guardar como completada
-        PlayerPrefs.SetInt(missionKey, 1);
-        SaveMissionKey(missionKey);
+        // Asignar misión usando la key STRING real
+        PlayerProgressManager.Instance.SetCurrentMission(savedKey);
 
+        // Guardar que ya fue activada una vez
+        PlayerPrefs.SetInt(savedKey, 1);
+        SaveMissionKey(savedKey);
         PlayerPrefs.Save();
+
         gameObject.SetActive(false);
     }
 

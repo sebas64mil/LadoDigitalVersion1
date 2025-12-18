@@ -23,6 +23,8 @@ public class PlayerHealth3D : MonoBehaviour
 
     private void Die()
     {
+        DeadProgressPlayer.AddDeath();
+
         //  Desactiva el control
         if (playerController != null)
         {

@@ -151,14 +151,25 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   goToMenu: 0
-  targetSceneName: MenuPrincipal
+  targetSceneName: PantallaFInal
   doorAnimator: {fileID: 0}
   openTriggerName: StartTransition
   animationDelay: 1
   interactionUI: {fileID: 298445348130405545}
   GoodSound: {fileID: 8300000, guid: 6429ef6fc932abf48bd557105f587cfb, type: 3}
   wrongSound: {fileID: 8300000, guid: 4bd65a58ca316624cad07248c5ba90ec, type: 3}
-  missionText: Busca la forma de salir
+  missionMessageKey:
+    m_TableReference:
+      m_TableCollectionName: GUID:c129a02367a2fc94688e158894551bb4
+    m_TableEntryReference:
+      m_KeyId: 53
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &5054438511133162441
 MonoBehaviour:
   m_ObjectHideFlags: 0

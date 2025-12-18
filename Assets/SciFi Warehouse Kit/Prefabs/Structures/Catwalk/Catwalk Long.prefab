@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1091362752988801798}
   - component: {fileID: 6636553020638664703}
   - component: {fileID: 2406652174324685773}
+  - component: {fileID: -6032411707447741395}
   m_Layer: 9
   m_Name: Catwalk Long
   m_TagString: Untagged
@@ -111,3 +112,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0000076, y: 0.47708893, z: 6.0000463}
   m_Center: {x: 0.9999972, y: 4.2614713, z: 2.9999964}
+--- !u!205 &-6032411707447741395
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4910352700272845603}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.99999714, y: 4.2614713, z: 2.9999964}
+  m_Size: 6.0000463
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.04180616
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6636553020638664703}
+  m_Enabled: 1

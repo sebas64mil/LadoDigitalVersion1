@@ -23,7 +23,7 @@ public class DefaultSceneDataContainer
 
         nivel1.doors.Add(new DoorData(2, 3));
 
-        nivel1.currentMission = "Sal de la habitacion";
+        nivel1.currentMissionKey = "I010";
 
 
         scenesDefault.Add(nivel1);
